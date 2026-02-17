@@ -1,6 +1,7 @@
-const inputName = document.getElementById("inputName")
-const inputAddress = document.getElementById('inputAddress')
-const inputType = document.getElementById('inputType')
+const inputName = document.getElementById("inputName").value
+const inputAddress = document.getElementById('inputAddress').value
+const inputType = document.getElementById('inputType').value
+
 const ringingTone = new Audio('marimba-ringtone.wav')
 
 
@@ -10,6 +11,7 @@ function btnDial() {
     const incomingCallAlert = document.getElementById("incomingCallAlert")
     incomingCallAlert.style.display = "block"
 }
+
 const userEndNotification = document.getElementById("userEndNotification")
 
 const intakeFormSection = document.getElementById("intakeFormSection")
@@ -32,28 +34,26 @@ function reject() {
 userEndNotification.style.display = "none"
 
 
-function submit(){
-    const agentReviewPanel = document.getElementById('agentReviewPanel');
-    const displayName = document.getElementById('displayName')
-    const displayAddress = document.getElementById('displayAddress')
-    const displayType = document.getElementById('displayType')
+const agentReviewPanel = document.getElementById('agentReviewPanel');
+const displayName = document.getElementById('displayName')
+const displayAddress = document.getElementById('displayAddress')
+const displayType = document.getElementById('displayType')
 
-    if (displayName == "" || displayAddress == "" || displayType == "select") {
-        alert("Input cannot be empty!!")
-        agentReviewPanel.style.display = "none"
+function submit(){
+    if (inputName == "" || inputAddress == "" || inputType == "select") {
+        emptyInputAlert.style.display = "block"
     } else {
+        emptyInputAlert.style.display = "block"
+        agentReviewPanel.style.display = "block"
         displayName.innerText = inputName.value
         displayAddress.innerText = inputAddress.value
         displayType.innerText = inputType.value
-        agentReviewPanel.style.display = "block"
         incomingCallAlert.innerText = "Form Received"
-        
     }
 
     inputName.value = ''
     inputAddress.value = ''
     inputType.value = ''
-    intakeFormSection.innerHTML = `<p class="text-info text-center">Wait for response</p>`
 }
 
 function approve() {
