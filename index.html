@@ -42,7 +42,7 @@
         }
 
         /* Simulation states - hidden by default */
-        #intakeFormSection, #feedback-section, #agentReviewPanel, #incomingCall { 
+        #intakeFormSection, #feedbackSection, #agentReviewPanel, #incomingCall { 
             display: none; 
         }
     </style>
@@ -119,11 +119,12 @@
                         <button id="btn-submit-form" class="btn btn-primary w-100 fw-bold" onclick="submit()">Submit Details</button>
                     </div>
 
-                    <div id="feedback-section">
+                    <div id="feedbackSection">
                         <div id="status-icon" class="mb-3"></div>
-                        <h2 id="status-title"></h2>
+                        <h2 id="status-title">Restart</h2>
                         <p id="status-text" class="text-secondary"></p>
-                        <button id="btn-restart" class="btn btn-link text-decoration-none mt-3">Start New Call</button>
+                        
+                        <button id="btn-restart" onclick="btnRestart()" class="btn btn-link text-decoration-none mt-3">Start New Call</button>
                     </div>
 
                 </div>
