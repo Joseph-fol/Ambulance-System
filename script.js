@@ -68,5 +68,5 @@ function pending() {
 }
 
 function deny() {
-    alert("Call Denied!!")
+    intakeFormSection.innerHTML = `<p class="alert alert-success text-center fw-bold text-black">Rejected</p>`
 }
